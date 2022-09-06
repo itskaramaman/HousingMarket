@@ -1,0 +1,28 @@
+GET http://localhost:5000/api/properties
+
+
+
+###### User Routes ############
+GET http://localhost:5000/api/users
+
+######
+
+POST http://localhost:5000/api/users/user
+Content-Type: application/json
+
+{
+    "email": "johndoee@example.com"
+}
+
+######
+
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoee@example.com",
+    "phone": "6667778888",
+    "password": "doe12345"
+}

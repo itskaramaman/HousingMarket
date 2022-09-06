@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
-
 const ImageSchema = mongoose.Schema({
     img: {
-        data: Buffer,
-        contentType: String
+        type: String,
+        required: true
     },
     desc: {
         type: String,
@@ -17,15 +16,22 @@ const PropertySchema = mongoose.Schema({
         type: String,
         required: true
     },
-    images: ImageSchema,
+    pincode: {
+        type: String,
+        required: true
+    },
+    images: [{
+        type: ImageSchema,
+        required: true
+    }],
     price: {
         type: Number,
         required: false,
     },
-    landmarks: {
+    landmarks: [{
         type: String,
         required: false
-    }
+    }]
 })
 
 module.exports = mongoose.model("PropertyModel", PropertySchema);
